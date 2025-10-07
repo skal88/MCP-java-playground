@@ -37,10 +37,8 @@ public class CopyToClipboardText {
 
             // We wait for the process to finish
             int exitCode = process.waitFor();
-            if (exitCode == 0) {
-                System.out.println("Text copied using the native xclip command.");
-            } else {
-                System.err.println("Error executing xclip, exit code: " + exitCode);
+            if (exitCode != 0) {
+                throw new RuntimeException("Error on copy text");
             }
         } catch (IOException | InterruptedException ex) {
             throw new RuntimeException(ex);
@@ -54,10 +52,8 @@ public class CopyToClipboardText {
 
             // We wait for the process to finish
             int exitCode = process.waitFor();
-            if (exitCode == 0) {
-                System.out.println("Text copied using the native clip command.");
-            } else {
-                System.err.println("Error executing clip, exit code: " + exitCode);
+            if (exitCode != 0) {
+                throw new RuntimeException("Error on copy text");
             }
         } catch (IOException | InterruptedException ex) {
             throw new RuntimeException(ex);
@@ -76,10 +72,8 @@ public class CopyToClipboardText {
 
             // We wait for the process to finish
             int exitCode = process.waitFor();
-            if (exitCode == 0) {
-                System.out.println("Text copied using the native pbcopy command.");
-            } else {
-                System.err.println("Error executing pbcopy, exit code: " + exitCode);
+            if (exitCode != 0) {
+                throw new RuntimeException("Error on copy text");
             }
         } catch (IOException | InterruptedException ex) {
             throw new RuntimeException(ex);
