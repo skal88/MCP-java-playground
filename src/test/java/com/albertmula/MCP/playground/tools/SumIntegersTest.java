@@ -1,5 +1,6 @@
 package com.albertmula.MCP.playground.tools;
 
+import com.albertmula.MCP.playground.tools.sum_integers.dom.SumIntegers;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

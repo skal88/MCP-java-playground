@@ -1,8 +1,11 @@
-package com.albertmula.MCP.playground.tools;
+package com.albertmula.MCP.playground.tools.copy_to_clipboard.dom;
+
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+@Service
 public class CopyToClipboardText {
 
     public String copy(String text){

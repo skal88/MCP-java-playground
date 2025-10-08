@@ -1,6 +1,7 @@
 package com.albertmula.MCP.playground;
 
-import com.albertmula.MCP.playground.mcp.McpTools;
+import com.albertmula.MCP.playground.tools.copy_to_clipboard.infra.mcp.MCPCopyToClipboard;
+import com.albertmula.MCP.playground.tools.sum_integers.infra.mcp.MCPSumIntegers;
 import org.springframework.ai.support.ToolCallbacks;
 import org.springframework.ai.tool.ToolCallback;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,9 @@ public class McpPlaygroundApplication {
 	}
 
 	@Bean
-	public List<ToolCallback> firstTestTool(McpTools mcpTools) {
-		return List.of(ToolCallbacks.from(mcpTools));
+	public List<ToolCallback> mcpTools(MCPCopyToClipboard mcpCopyToClipboard, MCPSumIntegers sumIntegers) {
+		return List.of(ToolCallbacks.from(
+				mcpCopyToClipboard,
+				sumIntegers));
 	}
 }
